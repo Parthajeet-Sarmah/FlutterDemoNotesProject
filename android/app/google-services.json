@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "183308785987",
+    "project_id": "demonotes-flutter-project",
+    "storage_bucket": "demonotes-flutter-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183308785987:android:d4efcb35139e8670aeb7f6",
+        "android_client_info": {
+          "package_name": "com.psarmah.demonotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183308785987-qiu4ohjlkugtfb1h68coetra57avua8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFCGpCvjni1hMq30V0UJEppw4WmYqTQb4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183308785987-qiu4ohjlkugtfb1h68coetra57avua8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
