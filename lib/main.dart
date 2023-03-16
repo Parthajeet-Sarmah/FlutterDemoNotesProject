@@ -5,7 +5,6 @@ import 'package:demonotes/views/verify_email_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'dart:developer' as devtools show log;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +16,7 @@ void main() {
       ),
       home: const HomePage(),
       routes: {
+        '/notes/': (context) => const NotesView(),
         '/login/': (context) => const LoginView(),
         '/register/': (context) => const RegisterView(),
       },
@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
               return const LoginView();
             }
           default:
-            return const CircularProgressIndicator();
+            return const Scaffold(body: CircularProgressIndicator());
         }
       },
     );
@@ -77,6 +77,7 @@ class _NotesViewState extends State<NotesView> {
                   final shouldLogout = await showLogoutDialog(context);
                   if (shouldLogout) {
                     await FirebaseAuth.instance.signOut();
+                    if (!mounted) return;
                     Navigator.of(context)
                         .pushNamedAndRemoveUntil('/login/', (_) => false);
                   }
