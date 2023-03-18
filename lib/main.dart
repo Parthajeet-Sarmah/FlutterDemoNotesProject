@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import 'constants/routes.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
@@ -16,9 +18,9 @@ void main() {
       ),
       home: const HomePage(),
       routes: {
-        '/notes/': (context) => const NotesView(),
-        '/login/': (context) => const LoginView(),
-        '/register/': (context) => const RegisterView(),
+        notesRoute: (context) => const NotesView(),
+        loginRoute: (context) => const LoginView(),
+        registerRoute: (context) => const RegisterView(),
       },
     ),
   );
@@ -47,7 +49,8 @@ class HomePage extends StatelessWidget {
               return const LoginView();
             }
           default:
-            return const Scaffold(body: CircularProgressIndicator());
+            return const Scaffold(
+                body: Center(child: CircularProgressIndicator()));
         }
       },
     );
