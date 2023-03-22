@@ -6,7 +6,6 @@ import 'package:demonotes/views/verify_email_view.dart';
 import 'package:flutter/material.dart';
 
 import 'constants/routes.dart';
-import 'dart:developer' as devtools show log;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +13,7 @@ void main() {
     MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: const HomePage(),
       routes: {
@@ -38,7 +37,6 @@ class HomePage extends StatelessWidget {
         switch (snapshot.connectionState) {
           case ConnectionState.done:
             final user = AuthService.firebase().currentUser;
-            devtools.log(user.toString());
             if (user != null) {
               if (user.isEmailVerified) {
                 return const NotesView();

@@ -4,8 +4,6 @@ import 'package:demonotes/services/auth/auth_service.dart';
 import 'package:demonotes/utilities/show_error_dialog.dart';
 import 'package:flutter/material.dart';
 
-import 'dart:developer' as devtools show log;
-
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
@@ -59,7 +57,6 @@ class _LoginViewState extends State<LoginView> {
                 await AuthService.firebase()
                     .logIn(email: email, password: password);
                 final user = AuthService.firebase().currentUser;
-                devtools.log(user.toString());
                 if (user?.isEmailVerified ?? false) {
                   if (!mounted) return;
                   Navigator.of(context)
