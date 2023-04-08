@@ -1,6 +1,6 @@
 import 'package:demonotes/services/auth/auth_service.dart';
 import 'package:demonotes/views/login_view.dart';
-import 'package:demonotes/views/notes/new_note_view.dart';
+import 'package:demonotes/views/notes/create_update_note_view.dart';
 import 'package:demonotes/views/notes/notes_view.dart';
 import 'package:demonotes/views/register_view.dart';
 import 'package:demonotes/views/verify_email_view.dart';
@@ -22,7 +22,7 @@ void main() {
         loginRoute: (context) => const LoginView(),
         registerRoute: (context) => const RegisterView(),
         verifyEmailRoute: (context) => const VerifyEmailView(),
-        newNoteRoute: (context) => const NewNoteView(),
+        createOrUpdateNoteRoute: (context) => const CreateUpdateNoteView(),
       },
     ),
   );
