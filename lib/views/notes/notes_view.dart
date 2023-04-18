@@ -7,8 +7,6 @@ import 'package:demonotes/utilities/dialogs/logout_dialog.dart';
 import 'package:demonotes/views/notes/notes_list_view.dart';
 import 'package:flutter/material.dart';
 
-import '../../services/crud/notes_service.dart';
-
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
 

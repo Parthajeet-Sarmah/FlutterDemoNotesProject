@@ -1,7 +1,5 @@
 import 'package:demonotes/services/auth/auth_service.dart';
 import 'package:demonotes/services/cloud/cloud_note.dart';
-import 'package:demonotes/services/cloud/cloud_storage_constants.dart';
-import 'package:demonotes/services/crud/notes_service.dart';
 import 'package:demonotes/utilities/generics/get_arguments.dart';
 import 'package:flutter/material.dart';
 import 'package:demonotes/services/cloud/firebase_cloud_storage.dart';

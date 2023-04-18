@@ -1,4 +1,3 @@
-import 'package:demonotes/services/crud/notes_service.dart';
 import 'package:flutter/material.dart';
 
 import '../../services/cloud/cloud_note.dart';
