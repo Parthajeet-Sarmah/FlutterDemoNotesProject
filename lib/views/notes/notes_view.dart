@@ -1,11 +1,14 @@
 import 'package:demonotes/constants/routes.dart';
 import 'package:demonotes/enums/menu_action.dart';
 import 'package:demonotes/services/auth/auth_service.dart';
+import 'package:demonotes/services/auth/bloc/auth_bloc.dart';
+import 'package:demonotes/services/auth/bloc/auth_event.dart';
 import 'package:demonotes/services/cloud/cloud_note.dart';
 import 'package:demonotes/services/cloud/firebase_cloud_storage.dart';
 import 'package:demonotes/utilities/dialogs/logout_dialog.dart';
 import 'package:demonotes/views/notes/notes_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
@@ -42,8 +45,8 @@ class _NotesViewState extends State<NotesView> {
                 case MenuAction.logout:
                   final shouldLogout = await showLogOutDialog(context);
                   if (shouldLogout) {
-                    AuthService.firebase().logOut();
                     if (!mounted) return;
+                    context.read<AuthBloc>().add(const AuthEventLogOut());
                     Navigator.of(context)
                         .pushNamedAndRemoveUntil(loginRoute, (_) => false);
                   }
